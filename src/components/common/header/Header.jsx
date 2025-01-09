@@ -26,7 +26,7 @@ const Header = () => {
                 <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold">BD</span>
                 </div>
-                <span className="text-xl font-bold text-gray-900">BloodDonate</span>
+                <span className="text-xl font-bold text-gray-900">BloodDonat</span>
               </div>
             </div>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
