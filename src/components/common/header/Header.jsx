@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Menu, X, User, Bell, ChevronDown } from "lucide-react";
-
+import { Link } from "react-router";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -31,13 +31,13 @@ const Header = () => {
             </div>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-red-500"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
