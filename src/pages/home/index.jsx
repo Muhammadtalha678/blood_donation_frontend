@@ -26,6 +26,9 @@ const Home = () => {
                 <Link to={'/login'} className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
                   Login
                 </Link>
+                <Link to={'/signup'} className="bg-red-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                  Register
+                </Link>
                 <button className="border-2 border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
                   Learn More
                 </button>
