@@ -25,6 +25,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       {/* some thing s else from dflsdhfl
       lhdjkshfkjsdhfkjahsd fdsjhf jksadhf jksadhfkashdf khsdfjhsdfhhghvfghshfdljhs */}
+      <p>loemdsjfjsdhf asfdjsa ds</p>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-red-600"> Login</CardTitle>
