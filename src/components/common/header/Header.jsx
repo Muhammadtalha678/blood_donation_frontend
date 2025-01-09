@@ -26,7 +26,7 @@ const Header = () => {
                 <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold">BD</span>
                 </div>
-                <span className="text-xl font-bold text-gray-900">BloodDonate</span>
+                <span className="text-xl font-bold text-gray-900">BloodDonat</span>
               </div>
             </div>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
@@ -35,7 +35,8 @@ const Header = () => {
                 
                 return <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
+                  // href={item.href}
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-red-500"
                 >
                   {item.name}
