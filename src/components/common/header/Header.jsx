@@ -30,15 +30,17 @@ const Header = () => {
               </div>
             </div>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
-              {navigation.map((item) => (
-                <Link
+              {navigation.map((item) => {
+                console.log(item);
+                
+                return <Link
                   key={item.name}
                   href={item.href}
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-red-500"
                 >
                   {item.name}
                 </Link>
-              ))}
+              })}
             </div>
           </div>
 
