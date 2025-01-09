@@ -27,7 +27,7 @@ const Login = () => {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-red-600"> Login</CardTitle>
-        </CardHeader>
+        </CardHeader> 
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

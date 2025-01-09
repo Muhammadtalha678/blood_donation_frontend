@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, Calendar, Users, Clock, ArrowRight, Phone } from 'lucide-react';
 import Header from '@/components/common/header/Header';
+import { Link } from 'react-router';
 
 const Home = () => {
   return (
@@ -22,6 +23,9 @@ const Home = () => {
                 <button className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
                   Donate Now
                 </button>
+                <Link to={'/login'} className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                  Login
+                </Link>
                 <button className="border-2 border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">
                   Learn More
                 </button>
