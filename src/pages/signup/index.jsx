@@ -1,36 +1,25 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { RegisterValidation } from '@/services/AuthValidation';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    donorId: '',
+    fullname: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
-  const [error, setError] = useState('');
-
-  const handleSubmit = (e) => {
+  const [error, setError] = useState(''); 
+  const [loading, setLoading] = useState(false);  
+  
+  const handleSubmit = async (e) => {
+    
     e.preventDefault();
-    const { donorId, email, password, confirmPassword } = formData;
-
-    if (!donorId || !email || !password || !confirmPassword) {
-      setError('Please fill in all fields');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-
-    // Handle sign-up logic here
-    setError('');
-  };
-
+    await RegisterValidation(formData,setError,setLoading)
+  }
+ 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-md">
@@ -43,15 +32,15 @@ const SignUp = () => {
               <Label className="block text-sm font-medium mb-1" htmlFor="fullName">Full Name</Label>
               <Input
                 type="text"
-                value={formData.donorId}
-                onChange={(e) => setFormData({ ...formData, donorId: e.target.value })}
+                value={formData.fullname}
+                onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
                 className="w-full p-2 border rounded-md"
-                placeholder="enter your name"
+                placeholder="Enter your name"
               />
             </div>
 
             <div>
-              <Label htmlFor='email' className="block text-sm font-medium mb-1">Email</Label>
+              <Label htmlFor="email" className="block text-sm font-medium mb-1">Email</Label>
               <Input
                 type="email"
                 value={formData.email}
@@ -62,7 +51,7 @@ const SignUp = () => {
             </div>
 
             <div>
-              <Label htmlFor='password' className="block text-sm font-medium mb-1">Password</Label>
+              <Label htmlFor="password" className="block text-sm font-medium mb-1">Password</Label>
               <Input
                 type="password"
                 value={formData.password}
@@ -73,7 +62,7 @@ const SignUp = () => {
             </div>
 
             <div>
-              <Label htmlFor='confirmPassword' className="block text-sm font-medium mb-1">Confirm Password</Label>
+              <Label htmlFor="confirmPassword" className="block text-sm font-medium mb-1">Confirm Password</Label>
               <Input
                 type="password"
                 value={formData.confirmPassword}
@@ -84,16 +73,14 @@ const SignUp = () => {
             </div>
 
             {error && (
-              <Alert variant="destructive">
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
+              <h1 className="text-3xl text-red-400">{error}</h1> // Display error message
             )}
 
             <button
               type="submit"
               className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700"
             >
-              Sign Up
+              {loading ? 'Loading...' : 'Sign Up'}
             </button>
 
             <div className="text-center text-sm">
